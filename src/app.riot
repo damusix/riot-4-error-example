@@ -1,0 +1,25 @@
+<app>
+
+    <h1>Riot 4 Error</h1>
+    <button onclick={ toggleMounted }>Toggle Mounted</button>
+    <button onclick={ updateState }>Update State</button>
+
+    <hr />
+
+    <sample-tag if={ state.isMounted } />
+
+    <script>
+        export default {
+
+            toggleMounted() {
+
+                this.stream.push({ isMounted: !this.state.isMounted });
+            },
+
+            updateState() {
+
+                this.stream.push({ check: !this.state.check, count: this.state.count++ });
+            }
+        }
+    </script>
+</app>
